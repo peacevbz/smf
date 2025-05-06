@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Square Meter Fabrications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to thank-you page */
+        .thank-you-container {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+        
+        .thank-you-content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 15px;
+            }
+            
+            .thank-you-content {
+                padding: 30px 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as your main site) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="tree.png" alt="SMF Logo">
+                <div class="logo-text">
+                    <h1>Square Meter Fabrications</h1>
+                    <p>your satisfaction is our priority</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Content -->
+    <main class="thank-you-container">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Thank You for Contacting Us!</h2>
+            <p>Your message has been successfully submitted. Our team will review your inquiry and get back to you within 24-48 hours.</p>
+            
+            <div class="additional-info">
+                <p><i class="fas fa-phone-alt"></i> For urgent matters, please call us at <strong>0979258300</strong></p>
+                <p><i class="fas fa-clock"></i> Business Hours: Mon-Fri 8:00 AM - 5:00 PM</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn"><i class="fas fa-home"></i> Return Home</a>
+                <a href="index.html#services" class="btn btn-outline"><i class="fas fa-tools"></i> View Our Services</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as your main site if you have one) -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Square Meter Fabrications. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu functionality (same as main site)
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainMenu = document.getElementById('mainMenu');
+
+            if (mobileMenuBtn && mainMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainMenu.classList.toggle('show');
+                    this.classList.toggle('active');
+                });
+
+                const navLinks = document.querySelectorAll('#mainMenu a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainMenu.classList.remove('show');
+                        mobileMenuBtn.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
